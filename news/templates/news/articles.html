@@ -1,0 +1,20 @@
+
+
+{%extends "news/layout.html" %}
+{% block body %}
+    <h2>Hyper news</h2>
+    <h3>You may search for something</h3>
+    <form action="" method="get">
+        <input type="text" name="q" placeholder="Write your query"/>
+        <input type="submit" value="search"/>
+    </form>
+    {% for date, articles_by_date in articles_by_dates.items %}
+        <h4>{{date}}</h4>
+        <ul>
+            {% for article_by_date in articles_by_date %}
+            <li><a href="/news/{{article_by_date.link}}/">{{article_by_date.title}}</a></li>
+            {% endfor %}
+        </ul>
+{% endfor %}
+<a href="/news/create/">Main Page</a>
+{% endblock %}

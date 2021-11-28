@@ -1,0 +1,8 @@
+{%extends "news/layout.html" %}
+
+{% block body %}
+<a href="/news/">Main Page</a>
+    <h2>{{article.title}}</h2>
+    <p>{{article.created}}</p>
+    <p>{{article.text}}</p>
+{% endblock %}

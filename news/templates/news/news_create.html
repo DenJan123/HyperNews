@@ -1,0 +1,15 @@
+{%extends "news/layout.html" %}
+
+{% block body %}
+<a href="/news/">Main Page</a>
+<h3>Add news here: </h3>
+<form action="{% url 'news_create' %}" method="post">
+    <table>
+        {% csrf_token %}
+        {{form.as_table}}
+        <tr>
+            <td><button type="submit">Add</button></td>
+        </tr>
+    </table>
+</form>
+{% endblock %}
